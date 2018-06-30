@@ -7,7 +7,7 @@ int main()
   srand(time(NULL));
 
 
-  Particles particles(1024, 0.003);
+  Particles particles(50, 0.003);
   ParticlesVisualisation visualisation;
 
   float k = 0.99;
