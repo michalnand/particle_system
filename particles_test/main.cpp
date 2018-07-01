@@ -25,7 +25,6 @@ void demo()
 //  Particles particles_b(50, 0.01);
   ParticlesVisualisation visualisation;
 
-
   while(1)
   {
     particles_a.process();
@@ -40,12 +39,10 @@ int main()
   srand(time(NULL));
 
 
-  create_dataset(3000, "/home/michal/dataset/collisions/training/");
-  create_dataset(3000, "/home/michal/dataset/collisions/testing/");
-
+  create_dataset(5000, "/home/michal/dataset/collisions/training/");
+  create_dataset(5000, "/home/michal/dataset/collisions/testing/");
 
 //  demo();
-
 
   printf("program done\n");
   return 0;
