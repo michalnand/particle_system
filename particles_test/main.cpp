@@ -4,9 +4,9 @@
 #include <timer.h>
 
 
-void create_dataset(unsigned int iterations, std::string path)
+void create_dataset(unsigned int iterations, float size, std::string path)
 {
-  Particles particles(50, 0.01);
+  Particles particles(50, size, 0.01);
   ParticlesVisualisation visualisation;
   ParticlesLog result_log(path, particles.count());
 
@@ -21,7 +21,7 @@ void create_dataset(unsigned int iterations, std::string path)
 
 void demo()
 {
-  Particles particles_a(50, 0.01);
+  Particles particles_a(50, 0.08, 0.01);
 //  Particles particles_b(50, 0.01);
   ParticlesVisualisation visualisation;
 
@@ -38,11 +38,22 @@ int main()
 {
   srand(time(NULL));
 
+  unsigned int count = 10000;
+/*
+  float size = 0.04;
+  create_dataset(count, size, "/home/michal/dataset/cells/particles_0/training/");
+  create_dataset(count, size, "/home/michal/dataset/cells/particles_0/testing/");
 
-  create_dataset(5000, "/home/michal/dataset/collisions/training/");
-  create_dataset(5000, "/home/michal/dataset/collisions/testing/");
+  size = 0.06;
+  create_dataset(count, size, "/home/michal/dataset/cells/particles_1/training/");
+  create_dataset(count, size, "/home/michal/dataset/cells/particles_1/testing/");
 
-//  demo();
+  size = 0.08;
+  create_dataset(count, size, "/home/michal/dataset/cells/particles_2/training/");
+  create_dataset(count, size, "/home/michal/dataset/cells/particles_2/testing/");
+*/
+
+  demo();
 
   printf("program done\n");
   return 0;

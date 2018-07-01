@@ -17,14 +17,15 @@ class Particles
     sParticle *particles;
 
     float m_dt;
+    float m_size;
     unsigned int m_iteration;
 
   public:
     Particles();
-    Particles(unsigned int count, float dt = 0.001);
+    Particles(unsigned int count, float size, float dt = 0.001);
     virtual ~Particles();
 
-    void init(unsigned int count, float dt = 0.001);
+    void init(unsigned int count, float size, float dt = 0.001);
     void uninint();
 
     sParticle get(unsigned int idx);

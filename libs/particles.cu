@@ -10,16 +10,18 @@ Particles::Particles()
   m_count = 0;
   m_dt = 1;
   m_iteration = 0;
+  m_size = 0.0;
 }
 
-Particles::Particles(unsigned int count, float dt)
+Particles::Particles(unsigned int count, float size, float dt)
 {
   particles = nullptr;
   m_count = 0;
   m_dt = 1;
   m_iteration = 0;
+  m_size = 0.0;
 
-  init(count, dt);
+  init(count, size, dt);
 }
 
 Particles::~Particles()
@@ -28,11 +30,12 @@ Particles::~Particles()
 }
 
 
-void Particles::init(unsigned int count, float dt)
+void Particles::init(unsigned int count, float size, float dt)
 {
   uninint();
   this->m_count = count;
   this->m_dt = dt;
+  this->m_size = size;
 
   m_iteration = 0;
 
@@ -189,7 +192,7 @@ sParticle Particles::random_particle(unsigned int idx)
   }
 
 
-  result.r = 0.08;
+  result.r = m_size;
   result.m = 1.0;
 
   float k = (0.5/side_size);
