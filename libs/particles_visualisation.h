@@ -7,13 +7,14 @@
 
 class ParticlesVisualisation
 {
-  private: 
+  private:
     Visualisation visualisation;
 
   public:
     ParticlesVisualisation();
     virtual ~ParticlesVisualisation();
 
+    void process(Particles &particles_a, Particles &particles_b);
     void process(Particles &particles);
 };
 

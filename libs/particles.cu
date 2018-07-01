@@ -189,7 +189,7 @@ sParticle Particles::random_particle(unsigned int idx)
   }
 
 
-  result.r = 0.03;
+  result.r = 0.08;
   result.m = 1.0;
 
   float k = (0.5/side_size);

@@ -1,34 +1,50 @@
 #include <particles.h>
+#include <particles_log.h>
 #include <particles_visualisation.h>
 #include <timer.h>
+
+
+void create_dataset(unsigned int iterations, std::string path)
+{
+  Particles particles(50, 0.01);
+  ParticlesVisualisation visualisation;
+  ParticlesLog result_log(path, particles.count());
+
+  for (unsigned int i = 0; i < iterations; i++)
+  {
+    result_log.add(particles);
+    particles.process();
+    visualisation.process(particles);
+  }
+}
+
+
+void demo()
+{
+  Particles particles_a(50, 0.01);
+//  Particles particles_b(50, 0.01);
+  ParticlesVisualisation visualisation;
+
+
+  while(1)
+  {
+    particles_a.process();
+//    particles_b.process();
+    visualisation.process(particles_a);
+    timer.sleep_ms(10);
+  }
+}
 
 int main()
 {
   srand(time(NULL));
 
 
-  Particles particles(50, 0.003);
-  ParticlesVisualisation visualisation;
+  create_dataset(3000, "/home/michal/dataset/collisions/training/");
+  create_dataset(3000, "/home/michal/dataset/collisions/testing/");
 
-  float k = 0.99;
-  float computing_time = 0.0;
 
-  while (1)
-  {
-      timer.start();
-      particles.process();
-      timer.stop();
-
-      computing_time = k*computing_time + (1.0 - k)*timer.get_duration();
-      printf("computing time %f [ms]\n", computing_time);
-
-      if ((particles.iteration()%2) == 0)
-      {
-        visualisation.process(particles);
-        timer.sleep_ms(5);
-      }
-  }
-
+//  demo();
 
 
   printf("program done\n");
