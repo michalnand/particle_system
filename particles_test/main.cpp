@@ -6,11 +6,6 @@
 
 std::string channel_name;
 
-//std::string channel_name = "kanal_mato_sim50";
-//std::string channel_name = "kanal_kika_sim6";
-//std::string channel_name = "kanal_monika_sim3044";
-//std::string channel_name = "kanal_kika_sim6_modulo";
-
 void experiment_0()
 {
   TrajectoryExperiment experiment(channel_name+"/256_basis/parameters.json");
@@ -107,9 +102,6 @@ int main()
     t_experiment_5.join();
     t_experiment_6.join();
   }
-
-
-
 
   printf("program done\n");
   return 0;
