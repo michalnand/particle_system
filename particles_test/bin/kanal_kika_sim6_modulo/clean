@@ -1,0 +1,27 @@
+cd 256_basis
+./clean
+cd ..
+
+cd 1024_basis
+./clean
+cd .. 
+
+cd 4096_basis
+./clean
+cd ..
+
+cd 4096_basis_verification
+./clean
+cd ..
+
+cd 4096_basis_swap
+./clean
+cd ..
+
+cd 4096_basis_swap_verification
+./clean
+cd ..
+
+cd 8192_basis
+./clean
+cd ..

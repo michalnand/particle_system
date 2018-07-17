@@ -1,0 +1,19 @@
+cd kanal_mato_sim50
+./plot
+cd ..
+
+cd kanal_kika_sim6
+./plot
+cd ..
+
+cd kanal_kika_sim6_modulo
+./plot
+cd ..
+
+cd kanal_monika_sim3044
+./plot
+cd ..
+
+cd kanal_kika_sim101
+./plot
+cd ..

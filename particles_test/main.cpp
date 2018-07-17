@@ -1,48 +1,115 @@
-#include <particles.h>
-#include <particles_log.h>
-#include <particles_visualisation.h>
+#include <trajectory_experiment.h>
+
+#include <iostream>
+#include <thread>
 #include <timer.h>
 
+std::string channel_name;
 
-void create_dataset(unsigned int iterations, std::string path)
+//std::string channel_name = "kanal_mato_sim50";
+//std::string channel_name = "kanal_kika_sim6";
+//std::string channel_name = "kanal_monika_sim3044";
+//std::string channel_name = "kanal_kika_sim6_modulo";
+
+void experiment_0()
 {
-  Particles particles(50, 0.01);
-  ParticlesVisualisation visualisation;
-  ParticlesLog result_log(path, particles.count());
+  TrajectoryExperiment experiment(channel_name+"/256_basis/parameters.json");
 
-  for (unsigned int i = 0; i < iterations; i++)
-  {
-    result_log.add(particles);
-    particles.process();
-    visualisation.process(particles);
-  }
+  experiment.train();
+  experiment.predict_trajectory();
+  experiment.local_prediction();
+}
+
+void experiment_1()
+{
+  TrajectoryExperiment experiment(channel_name+"/1024_basis/parameters.json");
+
+  experiment.train();
+  experiment.predict_trajectory();
+  experiment.local_prediction();
+}
+
+void experiment_2()
+{
+  TrajectoryExperiment experiment(channel_name+"/4096_basis/parameters.json");
+
+  experiment.train();
+  experiment.predict_trajectory();
+  experiment.local_prediction();
+}
+
+void experiment_3()
+{
+  TrajectoryExperiment experiment(channel_name+"/4096_basis_verification/parameters.json");
+
+  experiment.train();
+  experiment.predict_trajectory();
+  experiment.local_prediction();
+}
+
+void experiment_4()
+{
+  TrajectoryExperiment experiment(channel_name+"/4096_basis_swap/parameters.json");
+
+  experiment.train();
+  experiment.predict_trajectory();
+  experiment.local_prediction();
+}
+
+void experiment_5()
+{
+  TrajectoryExperiment experiment(channel_name+"/4096_basis_swap_verification/parameters.json");
+
+  experiment.train();
+  experiment.predict_trajectory();
+  experiment.local_prediction();
 }
 
 
-void demo()
-{
-  Particles particles_a(50, 0.01);
-//  Particles particles_b(50, 0.01);
-  ParticlesVisualisation visualisation;
 
-  while(1)
-  {
-    particles_a.process();
-//    particles_b.process();
-    visualisation.process(particles_a);
-    timer.sleep_ms(10);
-  }
+void experiment_6()
+{
+  TrajectoryExperiment experiment(channel_name+"/8192_basis/parameters.json");
+
+  experiment.train();
+  experiment.predict_trajectory();
+  experiment.local_prediction();
 }
+
 
 int main()
 {
-  srand(time(NULL));
+  std::vector<std::string> channels;
+
+  channels.push_back("kanal_mato_sim50");
+  channels.push_back("kanal_kika_sim6");
+  channels.push_back("kanal_monika_sim3044");
+  channels.push_back("kanal_kika_sim6_modulo");
+  channels.push_back("kanal_kika_sim101");
 
 
-  create_dataset(5000, "/home/michal/dataset/collisions/training/");
-  create_dataset(5000, "/home/michal/dataset/collisions/testing/");
+  for (unsigned int i = 0; i < channels.size(); i++)
+  {
+    channel_name = channels[i];
+    std::thread t_experiment_0(experiment_0);
+    std::thread t_experiment_1(experiment_1);
+    std::thread t_experiment_2(experiment_2);
+    std::thread t_experiment_3(experiment_3);
+    std::thread t_experiment_4(experiment_4);
+    std::thread t_experiment_5(experiment_5);
+    std::thread t_experiment_6(experiment_6);
 
-//  demo();
+    t_experiment_0.join();
+    t_experiment_1.join();
+    t_experiment_2.join();
+    t_experiment_3.join();
+    t_experiment_4.join();
+    t_experiment_5.join();
+    t_experiment_6.join();
+  }
+
+
+
 
   printf("program done\n");
   return 0;

@@ -1,0 +1,11 @@
+{
+  "basis_count"   : 4096,
+  "k"             : 0.02,
+  "learning_rate" : 0.1,
+
+  "result_dir"    : "kanal_kika_sim101/4096_basis_verification",
+
+  "training"      : "/home/michal/dataset/cells/kika_sim101/training",
+  "testing"       : "/home/michal/dataset/cells/kika_sim101/testing"
+
+}

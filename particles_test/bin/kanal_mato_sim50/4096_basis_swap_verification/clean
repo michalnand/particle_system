@@ -1,0 +1,8 @@
+rm *.dat -f
+rm *.log -f
+rm *.png -f
+rm local_prediction.json -f
+rm trajectory_predicted.json -f
+rm trajectory_required.json -f
+rm animation/*.mp4 -f
+ 

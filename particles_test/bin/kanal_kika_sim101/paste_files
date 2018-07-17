@@ -1,0 +1,27 @@
+cd 256_basis
+./paste_files
+cd ..
+
+cd 1024_basis
+./paste_files
+cd ..
+
+cd 4096_basis
+./paste_files
+cd ..
+
+cd 4096_basis_verification
+./paste_files
+cd ..
+
+cd 4096_basis_swap
+./paste_files
+cd ..
+
+cd 4096_basis_swap_verification
+./paste_files
+cd ..
+
+cd 8192_basis
+./paste_files
+cd ..

@@ -1,0 +1,15 @@
+cd kanal_mato_sim50
+./paste_files
+cd ..
+
+cd kanal_kika_sim6
+./paste_files
+cd ..
+
+cd kanal_kika_sim6_modulo
+./paste_files
+cd ..
+
+cd kanal_monika_sim3044
+./paste_files
+cd ..

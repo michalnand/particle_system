@@ -1,0 +1,11 @@
+{
+  "basis_count"   : 8192,
+  "k"             : 0.02,
+  "learning_rate" : 0.1,
+
+  "result_dir"    : "kanal_mato_sim50/8192_basis",
+
+  "training"      : "/home/michal/dataset/cells/sim_50/training",
+  "testing"       : "/home/michal/dataset/cells/sim_50/testing"
+
+}

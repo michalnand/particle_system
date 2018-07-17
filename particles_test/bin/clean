@@ -1,0 +1,19 @@
+cd kanal_mato_sim50
+./clean
+cd ..
+
+cd kanal_kika_sim6
+./clean
+cd ..
+
+cd kanal_kika_sim6_modulo
+./clean
+cd ..
+
+cd kanal_monika_sim3044
+./clean
+cd ..
+
+cd kanal_kika_sim101
+./clean
+cd ..

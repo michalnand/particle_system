@@ -1,0 +1,27 @@
+cd 256_basis
+./plot
+cd ..
+
+cd 1024_basis
+./plot
+cd ..
+
+cd 4096_basis
+./plot
+cd ..
+
+cd 4096_basis_verification
+./plot
+cd ..
+
+cd 4096_basis_swap
+./plot
+cd .. 
+
+cd 4096_basis_swap_verification
+./plot
+cd ..
+
+cd 8192_basis
+./plot
+cd ..

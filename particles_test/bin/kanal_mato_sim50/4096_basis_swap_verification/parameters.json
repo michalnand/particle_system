@@ -1,0 +1,11 @@
+{
+  "basis_count"   : 4096,
+  "k"             : 0.02,
+  "learning_rate" : 0.1,
+
+  "result_dir"    : "kanal_mato_sim50/4096_basis_swap_verification",
+
+  "training"      : "/home/michal/dataset/cells/sim_50/testing",
+  "testing"       : "/home/michal/dataset/cells/sim_50/testing"
+
+}
