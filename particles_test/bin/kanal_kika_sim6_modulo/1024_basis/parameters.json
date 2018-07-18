@@ -5,7 +5,7 @@
 
   "result_dir"    : "kanal_kika_sim6_modulo/1024_basis",
 
-  "training"      : "/home/michal/dataset/cells/kika_sim_6/training",
-  "testing"       : "/home/michal/dataset/cells/kika_sim_6/testing"
+  "training"      : "/home/michal/dataset/cells/kika_sim_6_modulo/training",
+  "testing"       : "/home/michal/dataset/cells/kika_sim_6_modulo/testing"
 
 }

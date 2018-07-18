@@ -1,0 +1,11 @@
+{
+  "basis_count"   : 256,
+  "k"             : 0.02,
+  "learning_rate" : 0.1,
+
+  "result_dir"    : "kika_tuha_bunka/256_basis",
+
+  "training"      : "/home/michal/dataset/cells/kika_tuha_bunka/training",
+  "testing"       : "/home/michal/dataset/cells/kika_tuha_bunka/testing"
+
+}

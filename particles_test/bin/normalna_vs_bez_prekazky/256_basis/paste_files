@@ -1,0 +1,3 @@
+paste local_prediction* | pr -t -e20 > LOCAL_PREDICTION_ALL.dat
+paste required* | pr -t -e20 > REQUIRED_ALL.dat
+paste predicted* | pr -t -e20 > PREDICTED_ALL.dat

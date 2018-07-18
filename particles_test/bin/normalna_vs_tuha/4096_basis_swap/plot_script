@@ -1,0 +1,124 @@
+set   autoscale                        # scale axes automatically
+unset log                              # remove any log-scaling
+unset label                            # remove any previous labels
+set xtic auto                         	# set xtics automatically
+set ytic auto                         # set ytics automatically
+set ztic auto
+
+set key left top
+
+set grid ytics lt 0.1 lw 0.1 lc rgb "#bbbbbb"
+set grid xtics lt 0.1 lw 0.1 lc rgb "#bbbbbb"
+set terminal png size 1024,768 enhanced font "Helvetica,20"
+
+
+set xlabel "iteration"
+set ylabel "error [um]"
+
+set output 'summary_error_during_trajectory_reconstruction.png'
+plot 'summary_error_during_trajectory_reconstruction.log' using 1:2 title "average error" with lines lw 2.0 lt rgb "green" ,\
+     'summary_error_during_trajectory_reconstruction.log' using 1:3 title "min error" with lines lw 2.0 lt rgb "blue" ,\
+     'summary_error_during_trajectory_reconstruction.log' using 1:4 title "max error" with lines lw 2.0 lt rgb "red"
+
+
+set key right bottom
+
+set yrange [*:*]
+
+set xlabel "position X [um]"
+set ylabel "position Y [um]"
+set zlabel "position Z [um]"
+
+set output 'trajectory_prediction_for_20_cells.png'
+plot 'required_0.dat' using  1:2 title "required" with lines lw 2.0 lt rgb "red", \
+     'required_1.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_2.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_3.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_4.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_5.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_6.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_7.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_8.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_9.dat' using  1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_10.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_11.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_12.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_13.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_14.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_15.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_16.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_17.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_18.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'required_19.dat' using 1:2 notitle with lines lw 2.0 lt rgb "red", \
+     'predicted_0.dat' using  1:2 title "predicted" with lines lw 2.0 lt rgb "blue", \
+     'predicted_1.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_2.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_3.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_4.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_5.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_6.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_7.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_8.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_9.dat' using  1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_10.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_11.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_12.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_13.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_14.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_15.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_16.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_17.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_18.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue", \
+     'predicted_19.dat' using 1:2 notitle with lines lw 2.0 lt rgb "blue"
+
+
+
+set xrange [0:800]
+set yrange [0:50]
+
+do for [ii=1:100] {
+
+  set output sprintf('animation/frame_%03i.png', ii)
+  line_number = ii*20
+
+ plot 'required_0.dat' using  1:2 every ::1::line_number title "required" with lines lw 2.0 lt rgb "red", \
+      'required_1.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_2.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_3.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_4.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_5.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_6.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_7.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_8.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_9.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_10.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_11.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_12.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_13.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_14.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_15.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_16.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_17.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_18.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'required_19.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "red", \
+      'predicted_0.dat' using  1:2 every ::1::line_number title "predicted" with lines lw 2.0 lt rgb "blue", \
+      'predicted_1.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_2.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_3.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_4.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_5.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_6.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_7.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_8.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_9.dat' using  1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_10.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_11.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_12.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_13.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_14.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_15.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_16.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_17.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_18.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue", \
+      'predicted_19.dat' using 1:2 every ::1::line_number notitle with lines lw 2.0 lt rgb "blue"
+}

@@ -5,7 +5,7 @@
 
   "result_dir"    : "kanal_mato_sim50/256_basis",
 
-  "training"      : "/home/michal/dataset/cells/sim_50/training",
-  "testing"       : "/home/michal/dataset/cells/sim_50/testing"
+  "training"      : "/home/michal/dataset/cells/mato_sim50/training",
+  "testing"       : "/home/michal/dataset/cells/mato_sim50/testing"
 
 }

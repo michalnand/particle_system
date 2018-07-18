@@ -76,11 +76,16 @@ int main()
 {
   std::vector<std::string> channels;
 
-  channels.push_back("kanal_mato_sim50");
   channels.push_back("kanal_kika_sim6");
-  channels.push_back("kanal_monika_sim3044");
   channels.push_back("kanal_kika_sim6_modulo");
-  channels.push_back("kanal_kika_sim101");
+  channels.push_back("kanal_mato_sim50");
+  channels.push_back("kanal_monika_sim3044");
+
+  channels.push_back("kika_bez_prekazky");
+  channels.push_back("kika_tuha_bunka");
+  channels.push_back("normalna_vs_bez_prekazky");
+  channels.push_back("normalna_vs_tuha");
+
 
 
   for (unsigned int i = 0; i < channels.size(); i++)

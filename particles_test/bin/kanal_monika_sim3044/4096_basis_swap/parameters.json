@@ -5,7 +5,7 @@
 
   "result_dir"    : "kanal_monika_sim3044/4096_basis_swap",
 
-  "training"      : "/home/michal/dataset/cells/monika_sim3044/training",
-  "testing"       : "/home/michal/dataset/cells/monika_sim3044/testing"
+  "training"      : "/home/michal/dataset/cells/monika_sim3044/testing",
+  "testing"       : "/home/michal/dataset/cells/monika_sim3044/training"
 
 }

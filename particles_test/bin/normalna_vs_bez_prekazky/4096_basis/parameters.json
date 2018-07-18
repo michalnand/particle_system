@@ -1,0 +1,11 @@
+{
+  "basis_count"   : 4096,
+  "k"             : 0.02,
+  "learning_rate" : 0.1,
+
+  "result_dir"    : "normalna_vs_bez_prekazky/4096_basis",
+
+  "training"      : "/home/michal/dataset/cells/kika_sim_6_modulo/training",
+  "testing"       : "/home/michal/dataset/cells/kika_bez_prekazky/testing"
+
+}

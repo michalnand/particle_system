@@ -5,7 +5,7 @@
 
   "result_dir"    : "kanal_kika_sim6/4096_basis_swap_verification",
 
-  "training"      : "/home/michal/dataset/cells/kika_sim_6/training",
+  "training"      : "/home/michal/dataset/cells/kika_sim_6/testing",
   "testing"       : "/home/michal/dataset/cells/kika_sim_6/testing"
 
 }
